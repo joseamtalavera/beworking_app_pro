@@ -11,8 +11,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
 
-const authRoutes = require('./routers/authRoutes');
-const userRoutes = require('./routers/userRoutes');
+//const authRoutes = require('./routers/authRoutes');
+//const userRoutes = require('./routers/userRoutes');
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, '../client/build')));
 app.use(cookieParser());
 
-const port = process.env.PORT || 5005;
+const port = process.env.PORT || 5008;
 
 const allowedOrigins = ['http://localhost:3003', 'http://16.16.183.230', 'https://app.be-working.com'];
 app.use(cors({
@@ -58,8 +58,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api', authRoutes);
-app.use('/api', userRoutes);
+//app.use('/api', authRoutes);
+//app.use('/api', userRoutes);
 
 app.use((err, req, res, next) => {
     if (err.code === 'EBADCSRFTOKEN'){
