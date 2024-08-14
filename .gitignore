@@ -12,6 +12,7 @@
 
 # production
 /build
+/client/build
 
 # Ignore all .env files
 .env
