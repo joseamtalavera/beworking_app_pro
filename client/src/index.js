@@ -18,7 +18,7 @@ import LoginPage from './Components/Login/LoginPage';
 //import Users from './components/Dashboard/Admin/Users/Users';
 //import User from './components/Dashboard/Admin/Users/User';
 //import AddUser from './components/Dashboard/Admin/Users/AddUser';
-//import EmailRecoveryForm from './components/Login/EmailRecoveryForm';
+import EmailRecoveryForm from './Components/Login/EmailRecoveryForm';
 //import BookingCalendar from './components/Calendar/BookingCalendar';
 
 ReactDOM.render(
@@ -27,7 +27,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/login" element={<LoginPage />} /> 
-      {/* <Route path="/recover" element={<EmailRecoveryForm />} /> */}
+      <Route path="/recover" element={<EmailRecoveryForm />} />
       {/* <Route path="/reset" element={<PasswordResetForm />} /> */}
       {/* <Route path="/confirm-email/:confirmationToken" element={<ConfirmationPage />} /> */}
       {/* <Route path="/thanks" element={<ThanksPage />} /> */}
