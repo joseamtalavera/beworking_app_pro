@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';
-//import LoginPage from './components/Login/LoginPage';
+import LoginPage from './Components/Login/LoginPage';
 //import VirtualOffice from './components/VirtualOffice/VirtualOffice';
 //import CoWorking from './components/CoWorking/CoWorking';
 //import MeetingRooms from './components/MeetingRooms/MeetingRooms';
@@ -26,7 +26,7 @@ ReactDOM.render(
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
-      {/* <Route path="/login" element={<LoginPage />} /> */}
+      <Route path="/login" element={<LoginPage />} /> 
       {/* <Route path="/recover" element={<EmailRecoveryForm />} /> */}
       {/* <Route path="/reset" element={<PasswordResetForm />} /> */}
       {/* <Route path="/confirm-email/:confirmationToken" element={<ConfirmationPage />} /> */}

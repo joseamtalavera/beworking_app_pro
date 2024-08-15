@@ -55,7 +55,7 @@ function ResponsiveDrawer() {
                                     {text}
                                 </Typography>
                             ))}
-                           {/*  <Button 
+                           <Button 
                                 variant="contained" 
                                 component={Link} 
                                 to="/login" 
@@ -64,7 +64,7 @@ function ResponsiveDrawer() {
                                 <Typography style={{ color: 'white'}}>
                                     Login
                                 </Typography>  
-                            </Button> */}
+                            </Button>
                         </div>
                     )}
                 </Toolbar>
