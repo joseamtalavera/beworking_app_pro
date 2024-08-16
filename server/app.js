@@ -11,7 +11,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
 
-//const authRoutes = require('./routers/authRoutes');
+const authRoutes = require('./routers/authRoutes');
 //const userRoutes = require('./routers/userRoutes');
 
 const app = express();
@@ -23,7 +23,7 @@ app.use(cookieParser());
 
 const port = process.env.PORT || 5008;
 
-const allowedOrigins = ['http://localhost:3003', 'http://16.16.183.230', 'https://app.be-working.com'];
+const allowedOrigins = ['http://localhost:3008', 'http://16.16.183.230:3008', 'https://app.be-working.com'];
 app.use(cors({
     origin: function(origin, callback){
         if(!origin) return callback(null, true);
@@ -58,7 +58,7 @@ app.use((req, res, next) => {
     next();
 });
 
-//app.use('/api', authRoutes);
+app.use('/api', authRoutes);
 //app.use('/api', userRoutes);
 
 app.use((err, req, res, next) => {
