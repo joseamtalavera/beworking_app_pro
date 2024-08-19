@@ -4,7 +4,7 @@ import { Box, Button, Link, Grid, Typography, Dialog, DialogTitle, DialogContent
 import PasswordInput from './PasswordInput';
 import EmailInput from './EmailInput';
 import { useNavigate } from 'react-router-dom';
-import useAuth from '../../Utils/UseAuth';
+import useAuth from '../../Utils/useAuth';
 
 
 function Login() {

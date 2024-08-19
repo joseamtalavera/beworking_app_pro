@@ -8,9 +8,9 @@ import LoginPage from './Components/Login/LoginPage';
 //import VirtualOffice from './components/VirtualOffice/VirtualOffice';
 //import CoWorking from './components/CoWorking/CoWorking';
 //import MeetingRooms from './components/MeetingRooms/MeetingRooms';
-//import AdminDashboard from './components/Dashboard/Admin/DashAdmin/AdminDashboard';
+import AdminDashboard from './Components/Dashboard/Admin/DashAdmin/AdminDashboard';
 //import UserDashboard from './components/Dashboard/User/DashUser/UserDashboard';
-//import PrivateRoute from './Utils/PrivateRoute';
+import PrivateRoute from './Utils/PrivateRoute';
 //import PasswordResetForm from './components/Login/PasswordResetForm';
 //import PasswordResetPage from './components/Login/PasswordResetPage';
 //import ConfirmationPage from './components/Login/ConfirmationPage';
@@ -35,7 +35,7 @@ ReactDOM.render(
       {/*<Route path="/virtual-office" element={<VirtualOffice />} />*/}
       {/*<Route path="/coworking" element={<CoWorking />} />*/}
       {/*<Route path="/meeting-rooms" element={<MeetingRooms />} />*/}
-      {/* <Route path='/dashboard/admin' element={<PrivateRoute><AdminDashboard /></PrivateRoute>} /> */}
+      <Route path='/dashboard/admin' element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
       {/* <Route path='/dashboard/admin/users' element={<PrivateRoute><Users /></PrivateRoute>} /> */}
       {/* <Route path='/dashboard/admin/users/:id' element={<PrivateRoute><User /></PrivateRoute>} /> */}
       {/* <Route path='/dashboard/admin/users/add-user' element={<PrivateRoute><AddUser /></PrivateRoute>} /> */}
