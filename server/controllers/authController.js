@@ -111,10 +111,11 @@ const loginEmail = async (req, res) => {
 
         // Generate a token for the user
         const token = jwt.sign({id:user.id, isAdmin: user.isAdmin}, process.env.JWT_SECRET, {expiresIn: '1h'}); 
-        
+        console.log('Generated token:', token);
+
         res.cookie('token', token, {
             httpOnly: true, 
-            secure: true, 
+            secure: req.secure || req.headers['x-forwarded-proto'] === 'https', 
             sameSite: 'strict',
             expires: new Date(Date.now() + 3600000), //1 hour
             });
