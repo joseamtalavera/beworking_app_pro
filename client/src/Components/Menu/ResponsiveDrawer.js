@@ -14,7 +14,7 @@ function ResponsiveDrawer() {
     };
 
     const drawer = (
-        <div> 
+        <div data-testid="drawer-content"> 
     
             <List>
                 {['Solutions', 'Pricing', 'Contact'].map((text, index) => (
@@ -30,7 +30,7 @@ function ResponsiveDrawer() {
     );
 
     return (
-        <div>
+        <div data-testid="responsive-drawer">
             <AppBar position="static" style={{ background: 'white' }} elevation={0}>
                 <Toolbar style={{ display: 'flex', justifyContent: 'space-between'}}>
                 <Box>
@@ -45,13 +45,14 @@ function ResponsiveDrawer() {
                             edge="end"
                             onClick={handleDrawerToggle}
                             style={{ color: 'orange' }}
+                            data-testid="menu-button"
                         >
                         <MenuIcon />
                         </IconButton>
                     ) : (
                         <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: '40px'}}>
                             {['Solutions', 'Pricing', 'Contact'].map((text, index) => (
-                                <Typography style={{ color: 'orange', marginRight: '30px'}}>
+                                <Typography key={index} style={{ color: 'orange', marginRight: '30px'}}>
                                     {text}
                                 </Typography>
                             ))}
