@@ -18,7 +18,6 @@ const registerEmail = async (req, res) => {
 
         // Generate a confirmation token
         const confirmationToken = crypto.randomBytes(20).toString('hex'); //this is the token that we keep in the database and send to the user's email for confirmation
-        console.log('Confirmation token:', confirmationToken);
 
         // Create a new user in the database
         const user = await createUser(null, email, hashedPassword, confirmationToken);
@@ -111,7 +110,6 @@ const loginEmail = async (req, res) => {
 
         // Generate a token for the user
         const token = jwt.sign({id:user.id, isAdmin: user.isAdmin}, process.env.JWT_SECRET, {expiresIn: '1h'}); 
-        console.log('Generated token:', token);
 
         res.cookie('token', token, {
             httpOnly: true, 
@@ -132,14 +130,12 @@ const loginEmail = async (req, res) => {
 }
 
 const resetPassword = async (req, res) => {
-    console.log('Reset password:', req.body);
     const { resetToken, password } = req.body;
 
     try {
         // Decrypt the id and timestamp
         const payload = jwt.verify(resetToken, process.env.JWT_SECRET);
         const {id, timestamp} = payload;
-        console.log('Payload:', payload);
 
         // Check if the timestamp is not too old
         const oneHour = 60 * 60 * 1000; 
@@ -173,8 +169,9 @@ const resetPassword = async (req, res) => {
 }
 
 const sendResetEmail = async (req, res) => {
+    console.log('sendResetEmail function called');
     const {email} = req.body;
-
+    console.log('Email from recovery:', email);
     try {
         //Find the user buy email
         const user = await getUserByEmail(email);
@@ -209,8 +206,6 @@ const sendResetEmail = async (req, res) => {
             </div>
             `
         });
-
-        console.log("Message sent: %s", info.messageId);
         res.status(200).send({message: 'Password reset email sent'});
     } catch (error) {
         console.log(error);

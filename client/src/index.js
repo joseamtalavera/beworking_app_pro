@@ -9,17 +9,17 @@ import LoginPage from './Components/Login/LoginPage';
 //import CoWorking from './components/CoWorking/CoWorking';
 //import MeetingRooms from './components/MeetingRooms/MeetingRooms';
 import AdminDashboard from './Components/Dashboard/Admin/DashAdmin/AdminDashboard';
-//import UserDashboard from './components/Dashboard/User/DashUser/UserDashboard';
+import UserDashboard from './Components/Dashboard/User/DashUser/UserDashboard';
 import PrivateRoute from './Utils/PrivateRoute';
-//import PasswordResetForm from './components/Login/PasswordResetForm';
-//import PasswordResetPage from './components/Login/PasswordResetPage';
-//import ConfirmationPage from './components/Login/ConfirmationPage';
-//import ThanksPage from './components/Login/ThanksPage';
-//import Users from './components/Dashboard/Admin/Users/Users';
-//import User from './components/Dashboard/Admin/Users/User';
-//import AddUser from './components/Dashboard/Admin/Users/AddUser';
+//import PasswordResetForm from './Components/Login/PasswordResetForm';
+import PasswordResetPage from './Components/Login/PasswordResetPage';
+import ConfirmationPage from './Components/Login/ConfirmationPage';
+import ThanksPage from './Components/Login/ThanksPage';
+//import Users from './Components/Dashboard/Admin/Users/Users';
+//import User from './Components/Dashboard/Admin/Users/User';
+//import AddUser from './Components/Dashboard/Admin/Users/AddUser';
 import EmailRecoveryForm from './Components/Login/EmailRecoveryForm';
-//import BookingCalendar from './components/Calendar/BookingCalendar';
+//import BookingCalendar from './Components/Calendar/BookingCalendar';
 
 ReactDOM.render(
   
@@ -29,9 +29,9 @@ ReactDOM.render(
       <Route path="/login" element={<LoginPage />} /> 
       <Route path="/recover" element={<EmailRecoveryForm />} />
       {/* <Route path="/reset" element={<PasswordResetForm />} /> */}
-      {/* <Route path="/confirm-email/:confirmationToken" element={<ConfirmationPage />} /> */}
-      {/* <Route path="/thanks" element={<ThanksPage />} /> */}
-      {/* <Route path="/reset/:resetToken" element={<PasswordResetPage />} />    */}
+      <Route path="/confirm-email/:confirmationToken" element={<ConfirmationPage />} />
+      <Route path="/thanks" element={<ThanksPage />} />
+      <Route path="/reset/:resetToken" element={<PasswordResetPage />} />    
       {/*<Route path="/virtual-office" element={<VirtualOffice />} />*/}
       {/*<Route path="/coworking" element={<CoWorking />} />*/}
       {/*<Route path="/meeting-rooms" element={<MeetingRooms />} />*/}
@@ -39,7 +39,7 @@ ReactDOM.render(
       {/* <Route path='/dashboard/admin/users' element={<PrivateRoute><Users /></PrivateRoute>} /> */}
       {/* <Route path='/dashboard/admin/users/:id' element={<PrivateRoute><User /></PrivateRoute>} /> */}
       {/* <Route path='/dashboard/admin/users/add-user' element={<PrivateRoute><AddUser /></PrivateRoute>} /> */}
-      {/* <Route path='/dashboard/user' element={<PrivateRoute><UserDashboard /></PrivateRoute>} /> */}
+      <Route path='/dashboard/user' element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
       {/* <Route path='dashboard/admin/calendar' element={<PrivateRoute><BookingCalendar /></PrivateRoute> } /> */}
     </Routes>
   </Router>,

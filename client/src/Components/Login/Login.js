@@ -31,7 +31,7 @@ function Login() {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }; */
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchCsrfToken = async () => {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/csrf-token`, {
         method: 'GET',
@@ -42,7 +42,7 @@ function Login() {
       console.log('CSRF token:', data.csrfToken);
     };
     fetchCsrfToken();
-  }, []);
+  }, []); */
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ function Login() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'CSRF-Token': csrfToken,    
+                //'CSRF-Token': csrfToken,    
             },
             body: JSON.stringify({ email, password }),
             credentials: 'include', 

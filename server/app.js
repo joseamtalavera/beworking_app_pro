@@ -9,7 +9,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const csrf = require('csurf');
+//const csrf = require('csurf');
 
 const authRoutes = require('./routers/authRoutes');
 //const userRoutes = require('./routers/userRoutes');
@@ -50,29 +50,24 @@ app.use(passport.initialize()); // Initialize passport and restore authenticatio
 app.use(passport.session());
 
 // Initialize CSRF protection middleware
-const csrfProtection = csrf();
+/* const csrfProtection = csrf();
 app.use(csrfProtection);
 
 app.use((req, res, next) => {
     req.session.csrfToken = req.csrfToken();
     next();
-});
+}); */
 
 app.use('/api', authRoutes);
 //app.use('/api', userRoutes);
 
-app.use((err, req, res, next) => {
+/* app.use((err, req, res, next) => {
     if (err.code === 'EBADCSRFTOKEN'){
-        console.error('Invalid CSRF token detected');
-        console.log('Cookies:', req.cookies);
-        console.log('Headers:', req.headers);
-        console.log('CSRF Token from Session:', req.session.csrfToken);
-        console.log('CSRF Token from Header:', req.get('csrf-token'));
         res.status(403).send({message: 'CSRF token is invalid'});
     } else {
        next(); 
     }
-});
+}); */
 
 
 passport.serializeUser(function(user, done) {// This function is used to store the user object into the session

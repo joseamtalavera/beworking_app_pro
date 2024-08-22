@@ -3,10 +3,10 @@ const {body, validationResult} = require('express-validator');
 const { registerEmail, loginEmail, confirmEmail, resetPassword, sendResetEmail } = require('../controllers/authController');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-
+/* 
 router.get('/csrf-token', (req, res) => {
     res.json({ csrfToken: req.csrfToken() });
-});
+}); */
 
 
 router.post('/register',
@@ -50,7 +50,6 @@ router.post('/recover',
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             const firstErrorMessage = errors.array()[0].msg;
-            console.log('Validadtion error:', firstErrorMessage);
             return res.status(400).send({message: firstErrorMessage});
         }
         next();
@@ -85,22 +84,16 @@ router.use((err, req, res, _next) => {
 });
 
 router.get('/auth/status', (req, res) => {
-    console.log('Checking auth status');
-    console.log('Cookies:', req.cookies);
     const token = req.cookies.token;
-    console.log('Token received:', token);
 
     if (!token) {
-        console.log('No token found');
         const response = { isAuthenticated: false, isAdmin: false };
-        console.log('Response:', response);
         return res.json(response);
     }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const response = { isAuthenticated: true, isAdmin: decoded.isAdmin };
-        console.log('Response:', response);
         return res.json(response);
     } catch (error) {
         console.log('Error verifying token:', error);
@@ -111,7 +104,6 @@ router.get('/auth/status', (req, res) => {
 });
 
 router.post('/auth/logout', (req, res) => {
-    console.log('Logging out');
     res.cookie('token', '', {
         httpOnly: true,
         secure: true,

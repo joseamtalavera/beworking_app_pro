@@ -49,6 +49,7 @@ const EmailRecoveryForm = (props) => {
             return;
         } 
         try {
+
             const response = await fetch(`${process.env.REACT_APP_API_URL}/api/recover`, {
                 method: 'POST',
                 headers: {
