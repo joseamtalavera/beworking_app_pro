@@ -17,7 +17,7 @@ function ResponsiveDrawer() {
         <div data-testid="drawer-content"> 
     
             <List>
-                {['Solutions', 'Pricing', 'Contact'].map((text, index) => (
+                {['Coworking', 'Aulas', 'Oficina Digital'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemText primary={text} style={{color:'white'}} />
                     </ListItem>
@@ -51,7 +51,7 @@ function ResponsiveDrawer() {
                         </IconButton>
                     ) : (
                         <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: '40px'}}>
-                            {['Solutions', 'Pricing', 'Contact'].map((text, index) => (
+                            {['Coworking', 'Aulas', 'Oficina Digital'].map((text, index) => (
                                 <Typography key={index} style={{ color: 'orange', marginRight: '30px'}}>
                                     {text}
                                 </Typography>

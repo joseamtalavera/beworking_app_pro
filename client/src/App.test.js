@@ -1,7 +1,6 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
-import { act } from 'react';
 import App from './App';
 
 
@@ -10,14 +9,14 @@ jest.mock('./Components/Menu/ResponsiveDrawer', () => {
   const React = require('react');
   return (props) => {
     const [open, setOpen] = React.useState(true);
-
     const handleDrawerToggle = () => setOpen(prev => !prev);
 
     return (
-      <div data-testid="responsive-drawer" style={{ display: open ? 'block' : 'none' }}>
+      <div>
         <button data-testid="menu-button" onClick={handleDrawerToggle}>
           Menu
         </button>
+        {open && <div data-testid="responsive-drawer">Drawer Content</div>}
       </div>
     );
   };
