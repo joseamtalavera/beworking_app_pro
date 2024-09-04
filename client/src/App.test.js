@@ -5,7 +5,7 @@ import App from './App';
 
 
 // Mock the isMobile variable
-jest.mock('./Components/Menu/ResponsiveDrawer', () => {
+jest.mock('./components/Menu/ResponsiveDrawer', () => {
   const React = require('react');
   return (props) => {
     const [open, setOpen] = React.useState(true);

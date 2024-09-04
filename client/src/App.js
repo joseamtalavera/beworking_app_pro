@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Typography} from '@mui/material';
-import ResponsiveDrawer from './Components/Menu/ResponsiveDrawer';
+import ResponsiveDrawer from './components/Menu/ResponsiveDrawer';
 
 function App() {
   return (
