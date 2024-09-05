@@ -21,8 +21,12 @@ import ThanksPage from './components/Login/ThanksPage';
 import EmailRecoveryForm from './components/Login/EmailRecoveryForm';
 //import BookingCalendar from './components/Calendar/BookingCalendar';
 
+import theme from './styles/theme';
+import { ThemeProvider } from '@mui/material/styles';
+
 ReactDOM.render(
   
+  <ThemeProvider theme={theme}> 
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
@@ -42,7 +46,9 @@ ReactDOM.render(
       <Route path='/dashboard/user' element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
       {/* <Route path='dashboard/admin/calendar' element={<PrivateRoute><BookingCalendar /></PrivateRoute> } /> */}
     </Routes>
-  </Router>,
+  </Router>
+  </ThemeProvider>
+  ,
   
   document.getElementById('root')
 );

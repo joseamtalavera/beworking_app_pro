@@ -2,7 +2,18 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import {
+    StyledAppBar,
+    StyledToolbar,
+    LogoImage,
+    StyeledIconButton,
+    DesktopMenu,
+    MenuItem,
+    LoginButton,
+    LoginButtonText,
+    DrawerPaper,
+    StyledListItemText
+} from '../../styles/ResponsiveDrawerStyles';
 
 function ResponsiveDrawer() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,15 +26,14 @@ function ResponsiveDrawer() {
 
     const drawer = (
         <div data-testid="drawer-content"> 
-    
             <List>
                 {['Coworking', 'Aulas', 'Oficina Digital'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemText primary={text} style={{color:'white'}} />
+                        <StyledListItemText primary={text}/>
                     </ListItem>
                 ))}
                 <ListItem button key="Login" component={Link} to="/login">
-                    <ListItemText primary="Login" style={{color:'white'}} />
+                    <StyledListItemText primary="Login"/>
                 </ListItem>
             </List>
         </div>
@@ -31,7 +41,7 @@ function ResponsiveDrawer() {
 
     return (
         <div data-testid="responsive-drawer">
-            <AppBar position="static" style={{ background: 'white' }} elevation={0}>
+            <StyledAppBar position="static" elevation={0}>
                 <Toolbar style={{ display: 'flex', justifyContent: 'space-between'}}>
                 <Box>
                     <Link to="/">
@@ -90,7 +100,7 @@ function ResponsiveDrawer() {
                         {drawer}
                     </Drawer>
                 )}
-            </AppBar>
+            </StyledAppBar>
         </div>
     );
 }

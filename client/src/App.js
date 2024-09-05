@@ -2,16 +2,17 @@
 import React from 'react';
 import { Typography} from '@mui/material';
 import ResponsiveDrawer from './components/Menu/ResponsiveDrawer';
+import {AppContainer} from './styles/AppStyles';
 
 function App() {
   return (
     <div>
       <ResponsiveDrawer /> 
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <Typography variant="h4">
+      <AppContainer>
+        <Typography variant='h4' >
           Welcome to the BeWorking new Website!
         </Typography>
-      </div>
+      </AppContainer>
     </div>
   );
 }
