@@ -1,19 +1,21 @@
 
 import React from 'react';
-import { Typography} from '@mui/material';
 import ResponsiveDrawer from './components/Menu/ResponsiveDrawer';
-import {AppContainer} from './styles/AppStyles';
+import {AppContainer, StyledTypography, Overlay, DrawerContainer} from './styles/AppStyles';
+
 
 function App() {
   return (
-    <div>
-      <ResponsiveDrawer /> 
-      <AppContainer>
-        <Typography variant='h4' >
-          Welcome to the BeWorking new Website!
-        </Typography>
-      </AppContainer>
-    </div>
+    <AppContainer>
+      <Overlay />
+      <DrawerContainer>
+        <ResponsiveDrawer />
+      </DrawerContainer>
+      <StyledTypography variant='h1' >
+        Trabaja desde donde quieras
+        y cuando quieras!
+        </StyledTypography> 
+    </AppContainer>
   );
 }
 

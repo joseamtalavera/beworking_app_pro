@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, Box, ListItemText} from '@mui/material';
 
 export const StyledAppBar = styled(AppBar)`
-    background: white !important;
+    background: transparent !important;
 `;
 
 export const StyledToolbar = styled(Toolbar)`

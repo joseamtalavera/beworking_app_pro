@@ -45,7 +45,7 @@ function ResponsiveDrawer() {
                 <Toolbar style={{ display: 'flex', justifyContent: 'space-between'}}>
                 <Box>
                     <Link to="/">
-                        <img src="/logo.png" alt="Logo" style={{ maxWidth: '125px', maxHeight: '75px', marginLeft: '50px', marginTop: '0px'}} /> {/* Logo image */}
+                        <img src="logo_aula_cowork_blanco-e1647607454934.png" alt="Logo" style={{ maxWidth: '125px', maxHeight: '75px', marginLeft: '50px', marginTop: '0px'}} /> {/* Logo image */}
                     </Link>
                 </Box>
                     {isMobile ? (
@@ -62,7 +62,7 @@ function ResponsiveDrawer() {
                     ) : (
                         <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: '40px'}}>
                             {['Coworking', 'Aulas', 'Oficina Digital'].map((text, index) => (
-                                <Typography key={index} style={{ color: 'orange', marginRight: '30px'}}>
+                                <Typography key={index} style={{ color: 'white', marginRight: '30px'}}>
                                     {text}
                                 </Typography>
                             ))}
