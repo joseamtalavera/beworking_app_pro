@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Typography} from '@mui/material';
+import { Typography, Button} from '@mui/material';
+import { createGlobalStyle } from 'styled-components';
 
 export const AppContainer = styled.div`
     display: flex;
@@ -8,10 +9,9 @@ export const AppContainer = styled.div`
     align-items: center;
     height: 100vh;
     position: relative;
-    background: url('/back.jpg') no-repeat center center fixed;
+    background: url('/oficinavirtual.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    
     `;
 
     export const StyledTypography = styled(Typography)`
@@ -19,6 +19,20 @@ export const AppContainer = styled.div`
         z-index: 2; 
         position: relative;
         text-align: center;
+        fontWeight: bold;
+        color: white;
+        margin-top: 20px;
+    `;
+
+    export const StyledSecondaryTypography = styled(Typography)`
+        color: white;
+        z-index: 2;
+        position: relative;
+        text-align: center;
+        fontWeight: bold;
+        color: white;
+        margin: 10px 0;
+        line-height: 1.5;
     `;
 
     export const Overlay = styled.div`
@@ -36,4 +50,20 @@ export const AppContainer = styled.div`
         top: 0;
         width: 100%;
         z-index: 3;
+    `;
+
+    export const GlobalStyle = createGlobalStyle`
+        body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+    `;
+
+    export const StyledButton = styled(Button)`
+        margin-top: 20px;
+        color: white !important;
+        z-index: 3;
+        background-color: orange;
     `;

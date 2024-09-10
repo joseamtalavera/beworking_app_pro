@@ -1,21 +1,48 @@
+// App.js
 
 import React from 'react';
 import ResponsiveDrawer from './components/Menu/ResponsiveDrawer';
-import {AppContainer, StyledTypography, Overlay, DrawerContainer} from './styles/AppStyles';
+import { 
+  AppContainer, 
+  StyledTypography, 
+  StyledSecondaryTypography, 
+  Overlay, DrawerContainer, 
+  GlobalStyle, 
+  StyledButton 
+} from './styles/AppStyles';
 
+const App = () => {
+  const handleCtaClick = () => {
+    console.log ('CTA clicked');
+  };
 
-function App() {
   return (
-    <AppContainer>
-      <Overlay />
-      <DrawerContainer>
-        <ResponsiveDrawer />
-      </DrawerContainer>
-      <StyledTypography variant='h1' >
-        Trabaja desde donde quieras
-        y cuando quieras!
-        </StyledTypography> 
-    </AppContainer>
+    <>
+      <GlobalStyle />
+      <AppContainer>
+        <Overlay />
+        
+        <DrawerContainer>
+          <ResponsiveDrawer />
+        </DrawerContainer>
+        
+        <StyledTypography variant='h1'>
+          BeWorking!
+        </StyledTypography>
+
+        <StyledSecondaryTypography variant='h2'>
+          Espacios de trabajo flexibles 
+        </StyledSecondaryTypography>
+        <StyledButton 
+          variant='contained' 
+          color='primary' 
+          size='large' 
+          onClick={handleCtaClick}
+        >
+          ¡Empieza ahora!
+        </StyledButton>
+      </AppContainer>
+    </>
   );
 }
 

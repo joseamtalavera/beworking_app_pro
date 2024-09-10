@@ -30,7 +30,7 @@ test('renders welcome message', () => {
       <App />
     </MemoryRouter>
   );
-  const welcomeElement = screen.getByText(/Welcome to the BeWorking new Website!/i);
+  const welcomeElement = screen.getByText(/BeWorking!/i);
   expect(welcomeElement).toBeInTheDocument();
 });
 
