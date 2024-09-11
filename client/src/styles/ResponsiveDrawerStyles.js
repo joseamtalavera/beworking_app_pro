@@ -1,3 +1,5 @@
+// ResponsiveDrawerStyles.js 
+
 import styled from 'styled-components';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, ListItemText} from '@mui/material';
 
@@ -18,7 +20,18 @@ export const LogoImage = styled.img`
 `;
 
 export const StyledIconButton = styled(IconButton)`
-    color: orange;
+    color: ${({open}) => (open ? 'white': 'orange')} !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+   
+`;
+
+export const CloseButton = styled(IconButton)`
+    position: absolute ;
+    color: white !important;
+    right: 0;
+    top: 0;
 `;
 
 export const DesktopMenu = styled.div`
@@ -50,10 +63,16 @@ export const LoginButtonText = styled(Typography)`
 
 export const StyledDrawer = styled(Drawer)`
     .MuiDrawer-paper {
-        width: 30%;
         background: #FFA500;
         color: white;
+        width: 50%;
     };
+`;
+
+export const DrawerContent = styled.div`
+  position: relative;
+    width: 100%;
+    height: 100%;
 `;
 
 export const StyledListItemText = styled(ListItemText)`

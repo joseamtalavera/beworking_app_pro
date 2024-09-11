@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { List, ListItem, useMediaQuery, useTheme, Box} from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import {
     StyledAppBar,
     StyledToolbar,
@@ -14,22 +15,33 @@ import {
     LoginButton,
     LoginButtonText,
     StyledDrawer,
-    StyledListItemText
+    StyledListItemText,
+    CloseButton, 
+    DrawerContent
 } from '../../styles/ResponsiveDrawerStyles';
 
 const menuItems = ['Coworking', 'Aulas', 'Oficina Digital'];
 
 const ResponsiveDrawer = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const theme = useTheme();
+    const theme = useTheme(); // get the theme object
+    // useMediaQuery takes a theme object and returns a function that can be called with a breakpoint key to check if the screen is at that breakpoint or smaller (.dow())
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const handleDrawerToggle = (() => {
         setMobileOpen(!mobileOpen);
-    },[]);
+    });
 
     const drawer = (
-        <div data-testid="drawer-content"> 
+        <DrawerContent data-testid="drawer-content">
+            <CloseButton // we could not take to the right?????
+                aria-label="close drawer"
+                edge="end"
+                onClick={handleDrawerToggle}
+                data-testid="close-button"
+            >
+                <CloseIcon />
+            </CloseButton>
             <List>
                 {menuItems.map((text, index) => (
                     <ListItem button key={text}>
@@ -40,7 +52,7 @@ const ResponsiveDrawer = () => {
                     <StyledListItemText primary="Login"/>
                 </ListItem>
             </List>
-        </div>
+        </DrawerContent>     
     );
 
     return (
@@ -58,7 +70,6 @@ const ResponsiveDrawer = () => {
                             aria-label="open drawer"
                             edge="end"
                             onClick={handleDrawerToggle}
-                            style={{ color: 'orange' }}
                             data-testid="menu-button"
                         >
                         <MenuIcon />
